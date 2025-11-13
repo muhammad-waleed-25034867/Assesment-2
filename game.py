@@ -4,7 +4,7 @@ import random
 # Create main window
 root = tk.Tk()
 root.title("Number Hunt")
-root.geometry("350x300")
+root.geometry("350x400")
 root.resizable(False, False)
 root.config(bg="#454F60")
 
@@ -56,6 +56,14 @@ def restart_game():
     attempts_label.config(text="Attempts: 0")
     entry.delete(0, tk.END)
     guess_button.config(state="normal")
+    
+    # Function to give even/odd hint
+def even_odd_hint():
+    if secret_number % 2 == 0:
+        result_label.config(text="Hint: The number is even!", fg="purple")
+    else:
+        result_label.config(text="Hint: The number is odd!", fg="purple")
+        
 
 # Buttons
 guess_button = tk.Button(root, text="Guess", font=("Arial", 11, "bold"), bg="#4CAF50", fg="white", command=check_guess)
@@ -63,6 +71,10 @@ guess_button.pack(pady=5)
 
 restart_button = tk.Button(root, text="Restart", font=("Arial", 11, "bold"), bg="#2196F3", fg="white", command=restart_game)
 restart_button.pack(pady=5)
+
+ # Hint button
+hint_button = tk.Button(root, text="Hint (Even/Odd)", font=("Arial", 11, "bold"), bg="#FFC107", fg="white", command=even_odd_hint)
+hint_button.pack(pady=5)
 
 # Quit button
 quit_button = tk.Button(root, text="Quit", font=("Arial", 11, "bold"), bg="#F44336", fg="white", command=root.destroy)
