@@ -6,14 +6,14 @@ root = tk.Tk()
 root.title("Number Guessing Game")
 root.geometry("350x300")
 root.resizable(False, False)
-root.config(bg="#E8F0FE")
+root.config(bg="#454F60")
 
 # Random number
 secret_number = random.randint(1, 50)
 attempts = 0
 
 # Title
-title_label = tk.Label(root, text="Guess the Number (1 - 50)", font=("Arial", 14, "bold"), bg="#E8F0FE")
+title_label = tk.Label(root, text="Guess Number (1 - 50)", font=("Arial", 14, "bold"), bg="#E8F0FE")
 title_label.pack(pady=10)
 
 # Input box
