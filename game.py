@@ -3,7 +3,7 @@ import random
 
 # Create main window
 root = tk.Tk()
-root.title("Number Guessing Game")
+root.title("Number Hunt")
 root.geometry("350x300")
 root.resizable(False, False)
 root.config(bg="#454F60")
